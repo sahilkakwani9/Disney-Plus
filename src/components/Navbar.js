@@ -98,8 +98,8 @@ const NavMenu = styled.div`
 `
 
 const UsrImg = styled.img`
-        width: 48px;
-        height: 48px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         cursor:pointer;
     `

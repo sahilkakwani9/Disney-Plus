@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import ImgCarousal from './ImgCarousal'
+import Viewers from './Viewers'
 
 function Home() {
   return (
     <Container>
       <ImgCarousal/>
+      <Viewers/>
     </Container>
   )
 }
