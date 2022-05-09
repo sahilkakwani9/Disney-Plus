@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "black-widow",
+        "path": "/images/blackwidow.webp"
+    },
+    {
+        "id": 2,
+        "name": "cosmos",
+        "path": "/images/cosmos.webp"
+    },
+    {
+        "id": 3,
+        "name": "Free-Guy",
+        "path": "/images/freeguy.webp"
+    },
+    {
+        "id": 4,
+        "name": "How I Met Your Mother",
+        "path": "/images/howimet.webp"
+    },
+    {
+        "id": 5,
+        "name": "Mega Icons",
+        "path": "/images/megaicons.webp"
+    },
+    {
+        "id": 6,
+        "name": "Soul",
+        "path": "/images/soul.webp"
+    },
+    {
+        "id": 7,
+        "name": "Special-ops",
+        "path": "/images/specialops.webp"
+    },
+    {
+        "id": 8,
+        "name": "Succession",
+        "path": "/images/succession.webp"
+    },
+    {
+        "id": 9,
+        "name": "eternals",
+        "path": "/images/eternals.webp"
+    },
+    {
+        "id": 10,
+        "name": "Hawkeye",
+        "path": "/images/hawkeye.webp"
+    },
+    {
+        "id": 11,
+        "name": "Masterchef Australia",
+        "path": "/images/masterchef.webp"
+    },
+    {
+        "id": 12,
+        "name": "Moonknight",
+        "path": "/images/moonknight.webp"
+    },
+    {
+        "id": 13,
+        "name": "West Side Story",
+        "path": "/images/westside.webp"
+    },
+    {
+        "id": 14,
+        "name": "83",
+        "path": "/images/83.webp"
+    }
+]
