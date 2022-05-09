@@ -7,11 +7,11 @@ function Navbar() {
         <Nav>
             <Logo src='./images/logo.svg'/>
             <NavMenu>
-                <a>
+                <a href='/'>
                     <img src="./images/home-icon.svg" alt="" />
                     <span>HOME</span>
                 </a>
-                <a>
+                <a href='/login'>
                     <img src="./images/search-icon.svg" alt="" />
                     <span>SEARCH</span>
                 </a>
@@ -23,7 +23,7 @@ function Navbar() {
                     <img src="./images/original-icon.svg" alt="" />
                     <span>ORIGINALS</span>
                 </a>
-                <a>
+                <a href='/details'>
                     <img src="./images/movie-icon.svg" alt="" />
                     <span>MOVIES</span>
                 </a>
@@ -61,6 +61,8 @@ const NavMenu = styled.div`
 
         a{
             display:flex;
+            text-decoration: none;
+            color: inherit;
             align-items:center;
             padding: 0 12px;
             cursor:pointer;

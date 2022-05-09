@@ -42,7 +42,8 @@ export default Details
 const Container = style.div`
     min-height: calc(100vh - 70px);
     padding: 0 calc(3.5vw + 5px);
-    position: relative;`
+    position: relative;
+    overflow-y: hidden;`
 
 const Background = style.div`
     position: fixed;
