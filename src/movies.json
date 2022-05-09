@@ -2,71 +2,99 @@
     {
         "id": 1,
         "name": "black-widow",
-        "path": "/images/blackwidow.webp"
+        "path": "/images/blackwidow.webp",
+        "coverPath": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4F39B7E16726ECF419DD7C49E011DD95099AA20A962B0B10AA1881A70661CE45/scale?width=1440&aspectRatio=1.78&format=jpeg",
+        "content": "A chinese mom who's sad when her grown son leaves home gets another chance at motherhood when one of her dumplings springs to life. But she finds that nothing stays cute and small forever."
     },
     {
         "id": 2,
         "name": "cosmos",
-        "path": "/images/cosmos.webp"
+        "path": "/images/cosmos.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 3,
         "name": "Free-Guy",
-        "path": "/images/freeguy.webp"
+        "path": "/images/freeguy.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 4,
         "name": "How I Met Your Mother",
-        "path": "/images/howimet.webp"
+        "path": "/images/howimet.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 5,
         "name": "Mega Icons",
-        "path": "/images/megaicons.webp"
+        "path": "/images/megaicons.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 6,
         "name": "Soul",
-        "path": "/images/soul.webp"
+        "path": "/images/soul.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 7,
         "name": "Special-ops",
-        "path": "/images/specialops.webp"
+        "path": "/images/specialops.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 8,
         "name": "Succession",
-        "path": "/images/succession.webp"
+        "path": "/images/succession.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 9,
         "name": "eternals",
-        "path": "/images/eternals.webp"
+        "path": "/images/eternals.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 10,
         "name": "Hawkeye",
-        "path": "/images/hawkeye.webp"
+        "path": "/images/hawkeye.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 11,
         "name": "Masterchef Australia",
-        "path": "/images/masterchef.webp"
+        "path": "/images/masterchef.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 12,
         "name": "Moonknight",
-        "path": "/images/moonknight.webp"
+        "path": "/images/moonknight.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 13,
         "name": "West Side Story",
-        "path": "/images/westside.webp"
+        "path": "/images/westside.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     },
     {
         "id": 14,
         "name": "83",
-        "path": "/images/83.webp"
+        "path": "/images/83.webp",
+        "coverPath": "/images/westside-cover.webp",
+        "content": "Forbidden love blooms between Tony and Maria, amidst the rivalry between the Jets and the Sharks, two street gangs of different ethnic backgrounds."
     }
 ]

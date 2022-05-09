@@ -1,6 +1,7 @@
 import React from 'react'
 import style from 'styled-components'
 import movies from '../movies.json'
+import {Link} from 'react-router-dom'
 function Movies() {
   return (
     <Container>
@@ -9,7 +10,10 @@ function Movies() {
             {
                 movies && movies.map((movie)=>{{
                     return <Wrap>
+                        <Link to={'/details'}>
                         <img src={movie.path} alt="" />
+                        </Link>
+                        
                     </Wrap> 
                 }
                 })
