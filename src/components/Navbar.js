@@ -1,39 +1,87 @@
-import React from 'react'
+import {React,useState} from 'react'
 import styled from 'styled-components'
+import {useNavigate, useHistory} from 'react-router-dom'
+import {auth,provider} from '../firebase'
+import {selectUserName, selectUserPhoto, setSignOut} from '../features/user/userSlice'
+import {setUserLogin} from '../features/user/userSlice'
+import {useSelector, useDispatch} from 'react-redux'
 
 function Navbar() {
+    // const history = useHistory();
+    const [logged,setLogged] = useState(false);
+    const [photo,setPhoto] = useState("");
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const userName = useSelector(selectUserName);
+    const userPhoto = useSelector(selectUserPhoto);
+
+    const clickAn= ()=>{
+        navigate('/details');
+    }
+    const signIn = ()=>{
+        auth.signInWithPopup(provider)
+        .then((result) => {
+            let user = result.user;
+            console.log(user.photoURL);
+            setPhoto(user.photoURL);
+            setLogged(true);
+            navigate('/');
+
+            // dispatch(setUserLogin({
+            //     name: user.displayName,
+            //     email: user.email,
+            //     photo: user.photoURL
+            // }))
+        })
+    }
+
+    const signOut = ()=>{
+        auth.signOut()
+        .then(()=>{
+            // dispatch(setSignOut());
+            setLogged(false);
+            navigate('/login');
+        })
+
+    }
   return (
       <>
         <Nav>
             <Logo src='./images/logo.svg'/>
-            <NavMenu>
-                <a href='/'>
-                    <img src="./images/home-icon.svg" alt="" />
-                    <span>HOME</span>
-                </a>
-                <a href='/login'>
-                    <img src="./images/search-icon.svg" alt="" />
-                    <span>SEARCH</span>
-                </a>
-                <a>
-                    <img src="./images/watchlist-icon.svg" alt="" />
-                    <span>WATCHLIST</span>
-                </a>
-                <a>
-                    <img src="./images/original-icon.svg" alt="" />
-                    <span>ORIGINALS</span>
-                </a>
-                <a href='/details'>
-                    <img src="./images/movie-icon.svg" alt="" />
-                    <span>MOVIES</span>
-                </a>
-                <a>
-                    <img src="./images/series-icon.svg" alt="" />
-                    <span>SERIES</span>
-                </a>
+            {(!logged)?(
+                <Login onClick={signIn}>login</Login>):
+                <>
+                    <NavMenu>
+                        <a href='/'>
+                            <img src="./images/home-icon.svg" alt="" />
+                            <span>HOME</span>
+                        </a>
+                        <a href='/login'>
+                            <img src="./images/search-icon.svg" alt="" />
+                            <span>SEARCH</span>
+                        </a>
+                        <a>
+                            <img src="./images/watchlist-icon.svg" alt="" />
+                            <span>WATCHLIST</span>
+                        </a>
+                        <a>
+                    <       img src="./images/original-icon.svg" alt="" />
+                            <span>ORIGINALS</span>
+                        </a>
+                        <a onClick={clickAn}>
+                            <img src="./images/movie-icon.svg" alt="" />
+                            <span>MOVIES</span>
+                        </a>
+                        <a>
+                            <img src="./images/series-icon.svg" alt="" />
+                            <span>SERIES</span>
+                        </a>
 
-            </NavMenu>
-            <UsrImg src='./images/sahil-headshot.JPG'/>
+                    </NavMenu>
+                    <UsrImg onClick={signOut} src={photo.toString()}/>
+                </>
+            }
+            
         </Nav></>
     
   )
@@ -47,7 +95,7 @@ const Nav = styled.nav`
     display:flex;
     align-items:center;
     padding: 0 36px;
-    justify-content: space-around;
+    justify-content: space-between;
     `
 
 const Logo = styled.img`
@@ -105,3 +153,19 @@ const UsrImg = styled.img`
         border-radius: 50%;
         cursor:pointer;
     `
+
+const Login = styled.div`
+    border: 1px solid #f9f9f9;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    
+    &:hover {
+        background-color: #f9f9f9;
+        color: #000;
+        border-color: transparent;
+    }`
