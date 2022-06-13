@@ -1,21 +1,26 @@
-import React from 'react'
+import {React,useEffect} from 'react'
 import style from 'styled-components'
 import movies from '../movies.json'
 
 
-function Details() {
+function Details(props) {
+    useEffect(()=>{
+        console.log(props);
+    })
   return (
     <Container>
-        {
+        {/* {
             movies && movies.map((movie)=>{{
                 return <Background>
                 <img src={movie.coverPath} alt="" />
             </Background>
             }})
-        }
-        
+        } */}
+        <Background>
+                <img src={props.movie} alt="" />
+        </Background>
         <ImgTitle>
-        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78" alt="" />
+            Title
         </ImgTitle>
         <Controls>
             <PlayButton>
@@ -78,6 +83,8 @@ const ImgTitle = style.div`
         height: 100%;
         object-fit: contain;
     }
+    `
+const Title = style.div`
     `
 
 const Controls = style.div`

@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import {React,useState,useEffect} from 'react'
 import styled from 'styled-components'
 import {useNavigate, useHistory} from 'react-router-dom'
 import {auth,provider} from '../firebase'
@@ -15,6 +15,9 @@ function Navbar() {
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
 
+    useEffect(()=>{
+        document.title = 'Disney+'
+    })
     const clickAn= ()=>{
         navigate('/details');
     }

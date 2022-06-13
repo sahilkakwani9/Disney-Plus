@@ -10,7 +10,7 @@ function Movies() {
             {
                 movies && movies.map((movie)=>{{
                     return <Wrap>
-                        <Link to={'/details'}>
+                        <Link to={movie.endpoint}>
                         <img src={movie.path} alt="" />
                         </Link>
                         
