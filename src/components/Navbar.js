@@ -50,7 +50,7 @@ function Navbar() {
   return (
       <>
         <Nav>
-            <Logo src='./images/logo.svg'/>
+            <Logo onClick={()=>{navigate('/');}} src='./images/logo.svg'/>
             {(!logged)?(
                 <Login onClick={signIn}>login</Login>):
                 <>
@@ -97,8 +97,11 @@ const Nav = styled.nav`
     background:#090b13;
     display:flex;
     align-items:center;
+    width: 100vw;
     padding: 0 36px;
     justify-content: space-between;
+    position: fixed;
+    z-index: 1;
     `
 
 const Logo = styled.img`

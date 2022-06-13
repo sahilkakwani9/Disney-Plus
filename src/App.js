@@ -24,7 +24,7 @@ function App() {
             <Route path='/login' element={<Login/>}/>
             {/* <Route path='/black-widow' element={<Details/>} /> */}
             {movies && movies.map((movie)=>{
-              return <Route path={'/'+movie.endpoint} element={<Details movie={movie.coverPath}/>} />
+              return <Route path={'/'+movie.endpoint} element={<Details movie={movie}/>} />
             })}
             <Route path='/' element={<Home/>} />
           </Routes>      

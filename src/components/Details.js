@@ -17,10 +17,10 @@ function Details(props) {
             }})
         } */}
         <Background>
-                <img src={props.movie} alt="" />
+                <img src={props.movie.coverPath} alt="" />
         </Background>
         <ImgTitle>
-            Title
+            {props.movie.name}
         </ImgTitle>
         <Controls>
             <PlayButton>
@@ -141,7 +141,7 @@ const GroupButton = style(AddButton)`
     }`
 
 const Subtitle = style.div`
-    color: rgb(290,290,290);
+    color: grey;
     margin-top: 25px;
     font-size: 15px;
     min-height: 20px;`
@@ -150,5 +150,5 @@ const Description = style.div`
     margin-top: 15px;
     font-size: 20px;
     line-height: 1.4;
-    color: rgb(290,290,290);
+    color: grey;
     width: 80%;`
