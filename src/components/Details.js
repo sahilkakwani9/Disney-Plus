@@ -19,9 +19,9 @@ function Details(props) {
         <Background>
                 <img src={props.movie.coverPath} alt="" />
         </Background>
-        <ImgTitle>
-            {props.movie.name}
-        </ImgTitle>
+        {/* <Title>
+            <h1>{props.movie.name}</h1>
+        </Title> */}
         <Controls>
             <PlayButton>
                 <img src="/images/play-icon-black.png" alt="" />
@@ -70,13 +70,25 @@ const Background = style.div`
         object-fit: cover;
     }
     `
-const ImgTitle = style.div`
-    width: 35vw;
+const Title = style.div`
+    width: fit-content;
     height: 30vh;
     min-height: 170px;
     min-width: 200px;
-    margin-top: 45px;
+    margin-top: 100px;
     margin-left:-50px;
+    font-size: 60px;
+    text-align: start;
+    align-items: end;
+    justify-content: center;
+    color: black;
+    
+
+    h1 {
+        padding-top: 10px;
+        margin-left: 40px;
+        // background-color: black;
+    }
 
     img {
         width: 100%;
@@ -84,13 +96,12 @@ const ImgTitle = style.div`
         object-fit: contain;
     }
     `
-const Title = style.div`
-    `
+
 
 const Controls = style.div`
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 300px;
     `
 
 const PlayButton = style.button`
