@@ -7,12 +7,12 @@ import db from '../firebase'
 
 function Home() {
   useEffect(()=>{
-    db.collection("movies").onSnapshot((snapshot) => {
-      let tempMovies = snapshot.docs.map((doc)=>{
-        console.log(doc.data());
-        return {id: doc.id, ...doc.data()}
-      })
-    })
+    // db.collection("movies").onSnapshot((snapshot) => {
+    //   let tempMovies = snapshot.docs.map((doc)=>{
+    //     console.log(doc.data());
+    //     return {id: doc.id, ...doc.data()}
+    //   })
+    // })
   })
   return (
     <Container>
@@ -43,4 +43,13 @@ const Container = styled.main`
     
   }
 `
+
+// const TestButton = styled.button`
+//   background-color: red;
+//   width: 20vw;
+//   height: 20vh;
+//   font-size: 50px;
+//   align-items: center;
+//   margin: 5vh 50vw;
+//   `
 

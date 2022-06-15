@@ -9,14 +9,11 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Details from './components/Details';
 import Login from './components/Login';
-import {Provider} from 'react-redux';
-import {store} from './app/store.js';
 import movies from './movies.json';
 
 function App() {
   return (
     
-    <Provider store={store}>
         <Router>
         <div className="App">
           <Navbar/>
@@ -30,7 +27,6 @@ function App() {
           </Routes>      
         </div>
       </Router>
-    </Provider>
     
     
   );

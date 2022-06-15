@@ -1,23 +1,30 @@
 import React from 'react'
 import style from 'styled-components'
+import useStore from '../store/store';
 
 function Viewers() {
+    const state = useStore();
+    const showMarvel = state.showMarvel;
+    const showAll = state.showAll;
+    const showPixar = state.showPixar;
+    const showStarWars = state.showStarWars;
+    const showNatGeo = state.showNatGeo;
   return (
     <Container>
         <Wrap>
-            <img src="/images/viewers-disney.png" alt="" />
+            <img onClick={showAll} src="/images/viewers-disney.png" alt="" />
         </Wrap>
         <Wrap>
-            <img src="/images/viewers-pixar.png" alt="" />
+            <img onClick={showPixar} src="/images/viewers-pixar.png" alt="" />
         </Wrap>
         <Wrap>
-            <img src="/images/viewers-marvel.png" alt="" />
+            <img onClick={showMarvel} src="/images/viewers-marvel.png" alt="" />
         </Wrap>
         <Wrap>
-            <img src="/images/viewers-national.png" alt="" />
+            <img onClick={showNatGeo} src="/images/viewers-national.png" alt="" />
         </Wrap>
         <Wrap>
-            <img src="/images/viewers-starwars.png" alt="" />
+            <img onClick={showStarWars} src="/images/viewers-starwars.png" alt="" />
         </Wrap>
     </Container>
   )

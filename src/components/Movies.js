@@ -1,20 +1,70 @@
 import React from 'react'
+import useStore from '../store/store'
 import style from 'styled-components'
 import movies from '../movies.json'
 import {Link} from 'react-router-dom'
-function Movies() {
+
+function Movies(props) {
+    const state = useStore();
+    const genre = state.genre;
   return (
     <Container>
         <h4>Recommended for You</h4>
         <Content>
             {
                 movies && movies.map((movie)=>{{
-                    return <Wrap>
+                    if (genre !== "all"){
+                        if (genre === "marvel"){
+                            if(movie.filter === "marvel"){
+                                return <Wrap>
+                                <Link to={movie.endpoint}>
+                                <img src={movie.path} alt="" />
+                                </Link>
+                                
+                                </Wrap> 
+                            }
+                        }
+                        else if(genre === "pixar"){
+                            if(movie.filter === "pixar"){
+                                return <Wrap>
+                                <Link to={movie.endpoint}>
+                                <img src={movie.path} alt="" />
+                                </Link>
+                                
+                                </Wrap> 
+                            }
+                        }
+                        else if(genre === "nat-geo"){
+                            if(movie.filter === "nat-geo"){
+                                return <Wrap>
+                                <Link to={movie.endpoint}>
+                                <img src={movie.path} alt="" />
+                                </Link>
+                                
+                                </Wrap> 
+                            }
+                        }
+                        else if(genre === "star-wars"){
+                            if(movie.filter === "star-wars"){
+                                return <Wrap>
+                                <Link to={movie.endpoint}>
+                                <img src={movie.path} alt="" />
+                                </Link>
+                                
+                                </Wrap> 
+                            }
+                        }
+                        
+                    }
+                    else if(genre === "all") {
+                        return <Wrap>
                         <Link to={movie.endpoint}>
                         <img src={movie.path} alt="" />
                         </Link>
                         
                     </Wrap> 
+                    }
+                    
                 }
                 })
             }

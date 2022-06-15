@@ -1,19 +1,19 @@
 import {React,useState,useEffect} from 'react'
 import styled from 'styled-components'
-import {useNavigate, useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {auth,provider} from '../firebase'
-import {selectUserName, selectUserPhoto, setSignOut} from '../features/user/userSlice'
-import {setUserLogin} from '../features/user/userSlice'
-import {useSelector, useDispatch} from 'react-redux'
+// import {selectUserName, selectUserPhoto, setSignOut} from '../features/user/userSlice'
+// import {setUserLogin} from '../features/user/userSlice'
+// import {useSelector, useDispatch} from 'react-redux'
 
 function Navbar() {
     // const history = useHistory();
     const [logged,setLogged] = useState(false);
     const [photo,setPhoto] = useState("");
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const navigate = useNavigate();
-    const userName = useSelector(selectUserName);
-    const userPhoto = useSelector(selectUserPhoto);
+    // const userName = useSelector(selectUserName);
+    // const userPhoto = useSelector(selectUserPhoto);
 
     useEffect(()=>{
         document.title = 'Disney+'

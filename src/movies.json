@@ -2,6 +2,7 @@
     {
         "id": 1,
         "name": "black-widow",
+        "filter": "marvel",
         "endpoint": "black-widow",
         "path": "/images/blackwidow.webp",
         "coverPath": "/images/blackwidowcover.webp",
@@ -10,6 +11,7 @@
     {
         "id": 2,
         "name": "cosmos",
+        "filter": "nat-geo",
         "endpoint": "cosmos",
         "path": "/images/cosmos.webp",
         "coverPath": "/images/cosmoscover.webp",
@@ -18,6 +20,7 @@
     {
         "id": 3,
         "name": "Free-Guy",
+        "filter": "disney",
         "endpoint": "free-guy",
         "path": "/images/freeguy.webp",
         "coverPath": "/images/freeguycover.webp",
@@ -26,6 +29,7 @@
     {
         "id": 4,
         "name": "How I Met Your Mother",
+        "filter": "star-wars",
         "endpoint": "how-i-met-your-mother",
         "path": "/images/howimet.webp",
         "coverPath": "/images/howimetyourmothercover.webp",
@@ -34,6 +38,7 @@
     {
         "id": 5,
         "name": "Mega Icons",
+        "filter": "nat-geo",
         "endpoint": "mega-icons",
         "path": "/images/megaicons.webp",
         "coverPath": "/images/megaiconscover.webp",
@@ -42,6 +47,7 @@
     {
         "id": 6,
         "name": "Soul",
+        "filter": "pixar",
         "endpoint": "soul",
         "path": "/images/soul.webp",
         "coverPath": "/images/soulcover.webp",
@@ -50,6 +56,7 @@
     {
         "id": 7,
         "name": "Special-ops",
+        "filter": "marvel",
         "endpoint": "special-ops",
         "path": "/images/specialops.webp",
         "coverPath": "/images/specialopscover.webp",
@@ -58,6 +65,7 @@
     {
         "id": 8,
         "name": "Succession",
+        "filter": "pixar",
         "endpoint": "succession",
         "path": "/images/succession.webp",
         "coverPath": "/images/successioncover.webp",
@@ -66,6 +74,7 @@
     {
         "id": 9,
         "name": "eternals",
+        "filter": "marvel",
         "endpoint": "eternals",
         "path": "/images/eternals.webp",
         "coverPath": "/images/eternalscover.webp",
@@ -74,6 +83,7 @@
     {
         "id": 10,
         "name": "Hawkeye",
+        "filter": "marvel",
         "endpoint": "hawkeye",
         "path": "/images/hawkeye.webp",
         "coverPath": "/images/hawkeyecover.webp",
@@ -82,6 +92,7 @@
     {
         "id": 11,
         "name": "Masterchef Australia",
+        "filter": "nat-geo",
         "endpoint": "masterchef-australia",
         "path": "/images/masterchef.webp",
         "coverPath": "/images/masterchefcover.webp",
@@ -90,6 +101,7 @@
     {
         "id": 12,
         "name": "Moonknight",
+        "filter": "marvel",
         "endpoint": "moonknight",
         "path": "/images/moonknight.webp",
         "coverPath": "/images/moonknightcover.webp",
@@ -98,6 +110,7 @@
     {
         "id": 13,
         "name": "West Side Story",
+        "filter": "star-wars",
         "endpoint": "west-side-story",
         "path": "/images/westside.webp",
         "coverPath": "/images/westside-cover.webp",
@@ -106,6 +119,7 @@
     {
         "id": 14,
         "name": "83",
+        "filter": "pixar",
         "endpoint": "eigty-three",
         "path": "/images/83.webp",
         "coverPath": "/images/83cover.webp",
