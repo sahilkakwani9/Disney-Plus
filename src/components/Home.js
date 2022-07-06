@@ -7,12 +7,6 @@ import db from '../firebase'
 
 function Home() {
   useEffect(()=>{
-    // db.collection("movies").onSnapshot((snapshot) => {
-    //   let tempMovies = snapshot.docs.map((doc)=>{
-    //     console.log(doc.data());
-    //     return {id: doc.id, ...doc.data()}
-    //   })
-    // })
   })
   return (
     <Container>

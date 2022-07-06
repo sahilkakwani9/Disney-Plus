@@ -1,58 +1,69 @@
 import {React,useState,useEffect} from 'react'
 import styled from 'styled-components'
 import {useNavigate} from 'react-router-dom'
-import {auth,provider} from '../firebase'
-// import {selectUserName, selectUserPhoto, setSignOut} from '../features/user/userSlice'
-// import {setUserLogin} from '../features/user/userSlice'
-// import {useSelector, useDispatch} from 'react-redux'
+import useStore from '../store/store'
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 function Navbar() {
     // const history = useHistory();
-    const [logged,setLogged] = useState(false);
     const [photo,setPhoto] = useState("");
+    const state = useStore();
+    const logged = state.logged;
+    const setLogged = state.setLogged;
+    console.log(logged);
     // const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { loginWithRedirect } = useAuth0();
     // const userName = useSelector(selectUserName);
     // const userPhoto = useSelector(selectUserPhoto);
 
     useEffect(()=>{
         document.title = 'Disney+'
+        // logged = state.logged;
     })
+    useEffect(() => {
+        setLogged(window.localStorage.getItem('logged'));
+      }, []);
+    
+      useEffect(() => {
+        window.localStorage.setItem('logged', logged);
+      }, [logged]);
     const clickAn= ()=>{
         navigate('/details');
     }
-    const signIn = ()=>{
-        auth.signInWithPopup(provider)
-        .then((result) => {
-            let user = result.user;
-            console.log(user.photoURL);
-            setPhoto(user.photoURL);
-            setLogged(true);
-            navigate('/');
+    // const signIn = ()=>{
+    //     auth.signInWithPopup(provider)
+    //     .then((result) => {
+    //         let user = result.user;
+    //         console.log(user.photoURL);
+    //         setPhoto(user.photoURL);
+    //         setLogged(true);
+    //         navigate('/');
 
-            // dispatch(setUserLogin({
-            //     name: user.displayName,
-            //     email: user.email,
-            //     photo: user.photoURL
-            // }))
-        })
-    }
+    //         // dispatch(setUserLogin({
+    //         //     name: user.displayName,
+    //         //     email: user.email,
+    //         //     photo: user.photoURL
+    //         // }))
+    //     })
+    // }
 
-    const signOut = ()=>{
-        auth.signOut()
-        .then(()=>{
-            // dispatch(setSignOut());
-            setLogged(false);
-            navigate('/login');
-        })
+    // const signOut = ()=>{
+    //     auth.signOut()
+    //     .then(()=>{
+    //         // dispatch(setSignOut());
+    //         setLogged(false);
+    //         navigate('/login');
+    //     })
 
-    }
+    // }
   return (
       <>
         <Nav>
             <Logo onClick={()=>{navigate('/');}} src='./images/logo.svg'/>
             {(!logged)?(
-                <Login onClick={signIn}>login</Login>):
+                <Login onClick={() => {navigate('/login');}}>login</Login>):
                 <>
                     <NavMenu>
                         <a href='/'>
@@ -81,7 +92,7 @@ function Navbar() {
                         </a>
 
                     </NavMenu>
-                    <UsrImg onClick={signOut} src={photo.toString()}/>
+                    <UsrImg onClick={()=>setLogged(false)} src={photo.toString()}/>
                 </>
             }
             

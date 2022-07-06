@@ -11,6 +11,7 @@ root.render(
      <Auth0Provider
     domain="dev-19t6g7jz.us.auth0.com"
     clientId="LDPj8znaIz5dcoEwuVgHzrxcA7uPUxhE"
+    // redirectUri='http://localhost:3000/'
     redirectUri='https://disney-plus-three.vercel.app/'
   >
     <App />

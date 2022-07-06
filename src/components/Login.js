@@ -1,14 +1,21 @@
 import React from 'react'
 import style from 'styled-components'
 import { useAuth0 } from "@auth0/auth0-react";
+import useStore from '../store/store'
 
 function Login() {
     const { loginWithRedirect } = useAuth0();
+    const state = useStore();
+    const setLogged = state.setLogged;
+    const logged = state.logged;
+    console.log(logged);
   return (
     <Container>
         <Box>   
             <LogoOne src="/images/cta-logo-one.svg"/>
-            <SignUp onClick={() => loginWithRedirect()}>GET ALL THERE</SignUp>
+            <SignUp onClick={() => {loginWithRedirect();setTimeout(() => {
+                setLogged(true);
+            }, 4000); }}>GET ALL THERE</SignUp>
             <Description>Get Premier Access to Raya and the Last Dragon for an additional fee with a Disney+ subscription. As of 03/26/21, the price of Disney+ and The Disney Bundle will increase.</Description>
             <LogoTwo src="/images/cta-logo-two.png"/>
         </Box>
