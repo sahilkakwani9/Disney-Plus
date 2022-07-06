@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Details from './components/Details';
 import Login from './components/Login';
 import movies from './movies.json';
+import Profile from './components/Profile'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               return <Route path={'/'+movie.endpoint} element={<Details movie={movie}/>} />
             })}
             <Route path='/' element={<Home/>} />
+            <Route path='/p' element={<Profile/>} />
           </Routes>      
         </div>
       </Router>
