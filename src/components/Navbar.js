@@ -7,14 +7,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar() {
     // const history = useHistory();
-    const [photo,setPhoto] = useState("");
     const state = useStore();
     const logged = state.logged;
     const setLogged = state.setLogged;
     console.log(logged);
     // const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { loginWithRedirect } = useAuth0();
+    // const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
+    const { user, isAuthenticated, isLoading } = useAuth0();
+    // const photo = '';
     // const userName = useSelector(selectUserName);
     // const userPhoto = useSelector(selectUserPhoto);
 
@@ -58,7 +60,10 @@ function Navbar() {
     //     })
 
     // }
-  return (
+    if (isLoading) {
+        return <div>Loading ...</div>;
+      }
+    return (
       <>
         <Nav>
             <Logo onClick={()=>{navigate('/');}} src='./images/logo.svg'/>
@@ -92,7 +97,12 @@ function Navbar() {
                         </a>
 
                     </NavMenu>
-                    <UsrImg onClick={()=>setLogged(false)} src={photo.toString()}/>
+                    {
+                        isAuthenticated && <UsrImg onClick={()=>{setTimeout(() => {
+                            setLogged(false);
+                        }, 4000);logout({ returnTo: 'https://disney-plus-three.vercel.app/login'})}} src={user.picture}/>
+                    }
+                    
                 </>
             }
             

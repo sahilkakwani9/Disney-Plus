@@ -2,6 +2,7 @@ import React from 'react'
 import style from 'styled-components'
 import { useAuth0 } from "@auth0/auth0-react";
 import useStore from '../store/store'
+import { useEffect } from 'react';
 
 function Login() {
     const { loginWithRedirect } = useAuth0();
@@ -9,6 +10,14 @@ function Login() {
     const setLogged = state.setLogged;
     const logged = state.logged;
     console.log(logged);
+
+    useEffect(() => {
+        setLogged(false);
+      }, []);
+    
+    //   useEffect(() => {
+    //     window.localStorage.setItem('logged', logged);
+    //   }, [logged]);
   return (
     <Container>
         <Box>   
