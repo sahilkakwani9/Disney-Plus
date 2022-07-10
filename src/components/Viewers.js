@@ -37,7 +37,13 @@ const Container = style.div`
     display: grid;
     padding: 30px 0 26px;
     grid-template-columns: repeat(5, minmax(0,1fr));
-    grid-gap:25px;
+    grid-gap:70px;
+    @media only screen and (max-width: 768px) {
+        overflow: scroll;
+    }
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
     
 `
 const Wrap = style.div`
@@ -55,5 +61,8 @@ const Wrap = style.div`
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
         transform: scale(1.05);
         border: 3px solid rgba(249,249,249,0.8);
+    }
+    @media only screen and (max-width: 768px) {
+        width: 20vw;
     }
     `

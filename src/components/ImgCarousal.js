@@ -56,6 +56,9 @@ const Carousel = styled(Slider)`
     }
     .slick-list {
         overflow: visible;
+    }
+    @media only screen and (max-width: 768px){
+        margin-top: 0px;
     }`
 
 const Wrap = styled.div`
@@ -71,4 +74,7 @@ const Wrap = styled.div`
             transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
             border: 4px solid rgba(249, 249, 249, 0.8)
         }
+    }
+    @media only screen and (max-width: 768px){
+
     }`

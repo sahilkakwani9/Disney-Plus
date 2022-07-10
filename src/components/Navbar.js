@@ -66,6 +66,11 @@ function Navbar() {
     return (
       <>
         <Nav>
+            <Hamburger>
+                <Line></Line>
+                <Line></Line>
+                <Line></Line>
+            </Hamburger>
             <Logo onClick={()=>{navigate('/');}} src='./images/logo.svg'/>
             {(!logged)?(
                 <Login onClick={() => {navigate('/login');}}>login</Login>):
@@ -123,10 +128,30 @@ const Nav = styled.nav`
     justify-content: space-between;
     position: fixed;
     z-index: 1;
+    @media only screen and (max-width: 768px) {
+        position: relative;
+    }
     `
 
+const Hamburger = styled.div`
+    padding: 2px 2px 2px 0px;
+    margin-top: 8px;
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+`
+
+const Line = styled.div`
+    width: 18px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4px;`
+
 const Logo = styled.img`
-    width:80px`
+    width:80px;
+    @media only screen and (max-width: 768px) {
+        width: 60px;
+    }`
 
 const NavMenu = styled.div`
         display:flex;
@@ -171,6 +196,9 @@ const NavMenu = styled.div`
                     opacity:1;
                 }
             }
+        }
+        @media only screen and (max-width: 768px) {
+            display: none;
         }
 `
 

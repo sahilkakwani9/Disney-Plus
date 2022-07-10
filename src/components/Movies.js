@@ -81,7 +81,7 @@ const Container = style.div`
 
 const Content = style.div`
     display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
+    grid-template-columns: repeat(3,minmax(0,1fr));
     grid-gap: 25px;
     `
 
@@ -101,5 +101,8 @@ const Wrap = style.div`
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
         transform: scale(1.05);
         border-color: rgba(249,249,249,0.8);
+    }
+    @media only screen and (max-width: 768px) {
+        width: 28vw;
     }
     `
