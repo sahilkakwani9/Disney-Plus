@@ -4,12 +4,17 @@ import ImgCarousal from './ImgCarousal'
 import Viewers from './Viewers'
 import Movies from './Movies'
 import db from '../firebase'
+import useStore from '../store/store'
 
 function Home() {
+  const state = useStore();
+  const navOpen = state.navOpen;
   useEffect(()=>{
   })
   return (
     <Container>
+      
+      
       <ImgCarousal/>
       <Viewers/>
       <Movies/>
@@ -38,6 +43,8 @@ const Container = styled.main`
   }
   
 `
+
+
 
 // const TestButton = styled.button`
 //   background-color: red;

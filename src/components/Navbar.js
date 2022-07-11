@@ -9,6 +9,8 @@ function Navbar() {
     // const history = useHistory();
     const state = useStore();
     const logged = state.logged;
+    const navOpen = state.navOpen
+    const setNavOpen = state.setNavOpen; 
     const setLogged = state.setLogged;
     console.log(logged);
     // const dispatch = useDispatch();
@@ -65,13 +67,20 @@ function Navbar() {
       }
     return (
       <>
+        {
+            navOpen && <Sidebar>
+                <SideList><img src="./channels.svg" alt="" /> Channels</SideList>
+                <SideList><img src="./languages.svg" alt="" /> Languages</SideList>
+                <SideList><img src="./genres.svg" alt="" /> Genres</SideList>
+            </Sidebar>
+        }
         <Nav>
-            <Hamburger>
+            <Hamburger onClick={()=>{navOpen?setNavOpen(false):setNavOpen(true)}}>
                 <Line></Line>
                 <Line></Line>
                 <Line></Line>
             </Hamburger>
-            <Logo onClick={()=>{navigate('/');}} src='./images/logo.svg'/>
+            <Logo onClick={()=>{navigate('/'); setNavOpen(false);}} src='./images/logo.svg'/>
             {(!logged)?(
                 <Login onClick={() => {navigate('/login');}}>login</Login>):
                 <>
@@ -224,3 +233,26 @@ const Login = styled.div`
         color: #000;
         border-color: transparent;
     }`
+
+    const Sidebar = styled.div`
+    width: 70vw;
+    background-color: #151718;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    padding-top: 10px;
+ `
+
+const SideList = styled.div`
+    display: flex;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    // margin-left: 15px;
+    img {
+        padding:0 15px;
+    }
+    `
