@@ -66,6 +66,11 @@ const Box = style.div`
     align-items: center;
     justify-content: center;
     margin-top:135px;
+    @media only screen and (max-width: 768px) {
+        max-width: 90%;
+        padding: 0 10px;
+        margin-top: 0;
+    }
     `
 
 const LogoOne = style.img`

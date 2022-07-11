@@ -59,6 +59,10 @@ const Carousel = styled(Slider)`
     }
     @media only screen and (max-width: 768px){
         margin-top: 0px;
+
+        button {
+            margin: 0 10px;
+        }
     }`
 
 const Wrap = styled.div`

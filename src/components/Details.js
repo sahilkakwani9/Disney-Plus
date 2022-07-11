@@ -67,7 +67,15 @@ const Background = style.div`
     img {
         height: 100%;
         width:100%;
-        object-fit: cover;
+        object-fit: fill;
+    }
+    @media only screen and (max-width: 768px) {
+        height: 100%;
+        width: 100vw;
+        img {
+            width: 100vw;
+            object-fit: fill;
+        }
     }
     `
 const Title = style.div`
@@ -102,6 +110,12 @@ const Controls = style.div`
     display: flex;
     align-items: center;
     margin-top: 300px;
+    @media only screen and (max-width: 768px) {
+        margin-top: 200px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        grid-gap: 20px;
+    }
     `
 
 const PlayButton = style.button`
@@ -127,6 +141,9 @@ const TrailerButton = style(PlayButton)`
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgb(249, 249 ,249);
     color: rgb(249, 249 ,249);
+    @media only screen and (max-width: 768px) {
+        width: 43vw;
+    }
 `
 
 
@@ -149,10 +166,13 @@ const GroupButton = style(AddButton)`
     img {
         height:100%;
         width: 100%;
+    }
+    @media only screen and (max-width: 768px) {
+        margin-left: -130px;
     }`
 
 const Subtitle = style.div`
-    color: grey;
+    color: green;
     margin-top: 25px;
     font-size: 15px;
     min-height: 20px;`

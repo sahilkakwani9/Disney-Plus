@@ -40,6 +40,7 @@ const Container = style.div`
     grid-gap:70px;
     @media only screen and (max-width: 768px) {
         overflow: scroll;
+        grid-gap: 100px;
     }
     &::-webkit-scrollbar { 
         display: none;  /* Safari and Chrome */
@@ -63,6 +64,6 @@ const Wrap = style.div`
         border: 3px solid rgba(249,249,249,0.8);
     }
     @media only screen and (max-width: 768px) {
-        width: 20vw;
+        width: 25vw;
     }
     `
