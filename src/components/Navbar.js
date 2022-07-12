@@ -65,7 +65,15 @@ function Navbar() {
 
     // }
     if (isLoading) {
-        return <div>Loading ...</div>;
+        return  <Nav><Hamburger onClick={() => navOpen ? setNavOpen(false) : setNavOpen(true)}>
+        <Line></Line>
+            <Line></Line>
+            <Line></Line>
+        </Hamburger>
+        <Sidebar show={navOpen} onClickOutside={() => { setNavOpen(false) }} />
+        <Logo onClick={()=>{navigate('/'); setNavOpen(false);}} src='./images/logo.svg'/>
+        <Login onClick={() => {navigate('/login');}}>login</Login>
+        </Nav>;
       }
     return (
       <>
