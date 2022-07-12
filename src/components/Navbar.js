@@ -3,14 +3,16 @@ import styled from 'styled-components'
 import {useNavigate} from 'react-router-dom'
 import useStore from '../store/store'
 import { useAuth0 } from "@auth0/auth0-react";
+import Sidebar from './Sidebar';
+
 
 
 function Navbar() {
     // const history = useHistory();
     const state = useStore();
     const logged = state.logged;
-    const navOpen = state.navOpen
-    const setNavOpen = state.setNavOpen; 
+    const setNavOpen = state.setNavOpen;
+    const navOpen = state.navOpen; 
     const setLogged = state.setLogged;
     console.log(logged);
     // const dispatch = useDispatch();
@@ -67,19 +69,14 @@ function Navbar() {
       }
     return (
       <>
-        {
-            navOpen && <Sidebar>
-                <SideList><img src="./channels.svg" alt="" /> Channels</SideList>
-                <SideList><img src="./languages.svg" alt="" /> Languages</SideList>
-                <SideList><img src="./genres.svg" alt="" /> Genres</SideList>
-            </Sidebar>
-        }
+        
         <Nav>
-            <Hamburger onClick={()=>{navOpen?setNavOpen(false):setNavOpen(true)}}>
-                <Line></Line>
+            <Hamburger onClick={() => navOpen ? setNavOpen(false) : setNavOpen(true)}>
+            <Line></Line>
                 <Line></Line>
                 <Line></Line>
             </Hamburger>
+            <Sidebar show={navOpen} onClickOutside={() => { setNavOpen(false) }} />
             <Logo onClick={()=>{navigate('/'); setNavOpen(false);}} src='./images/logo.svg'/>
             {(!logged)?(
                 <Login onClick={() => {navigate('/login');}}>login</Login>):
@@ -120,7 +117,8 @@ function Navbar() {
                 </>
             }
             
-        </Nav></>
+        </Nav>
+        </>
     
   )
 }
@@ -141,7 +139,6 @@ const Nav = styled.nav`
         position: relative;
     }
     `
-
 const Hamburger = styled.div`
     padding: 2px 2px 2px 0px;
     margin-top: 8px;
@@ -155,6 +152,7 @@ const Line = styled.div`
     height: 2px;
     background-color: rgba(255, 255, 255, 0.6);
     margin-bottom: 4px;`
+
 
 const Logo = styled.img`
     width:80px;
@@ -234,25 +232,3 @@ const Login = styled.div`
         border-color: transparent;
     }`
 
-    const Sidebar = styled.div`
-    width: 70vw;
-    background-color: #151718;
-    min-height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    padding-top: 10px;
- `
-
-const SideList = styled.div`
-    display: flex;
-    padding: 10px 0;
-    font-size: 1.2rem;
-    // margin-left: 15px;
-    img {
-        padding:0 15px;
-    }
-    `
