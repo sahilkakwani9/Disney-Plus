@@ -36,6 +36,7 @@ export default Login
 
 const Container = style.div`
     min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
     position: relative;
     display: flex;
     justify-content: center;
@@ -44,17 +45,21 @@ const Container = style.div`
     
     &:before {
         background-position: top;
-        background-size: cover;
+        object-fit: fill;
         background-repeat: no-repeat;
         background-image: url('/images/login-background.jpg');
         opacity: 0.9;
         position: absolute;
         content: "";
         top:0;
-        bottom:0;
+        bottom:-66px;
         right:0;
         left:0;
         z-index: -1;
+    }
+    @media only screen and (max-width: 768px){
+        max-height: 100vh;
+        overflow: hidden;
     }`
 
 const Box = style.div`

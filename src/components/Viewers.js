@@ -40,7 +40,7 @@ const Container = style.div`
     grid-gap:70px;
     @media only screen and (max-width: 768px) {
         overflow: scroll;
-        grid-gap: 100px;
+        grid-gap: 110px;
     }
     &::-webkit-scrollbar { 
         display: none;  /* Safari and Chrome */
